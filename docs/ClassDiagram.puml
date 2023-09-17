@@ -1,0 +1,102 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class AgriculturalInstallation{
+-name : String
+-buildings : Collection<Building>
+-plots : Collection<AgriculturalPlot>
+}
+
+class AgriculturalPlot{
+-designation : String
+-area : Double
+-culture : Culture
+}
+
+enum Building{
+ANIMAL_STABLE
+MACHINE_APPLIANCES_GARAGE
+HARVEST_WAREHOUSE
+PRODUCTIONS_FACTOR_ANIMAL_RATION
+IRRIGATION_SYSTEM
+}
+
+abstract class Entity{
+-localID : String
+-name : String
+-local : Coordinates
+}
+
+class Client{
+}
+
+class Producer{
+}
+
+class Company{
+-hub : boolean
+}
+
+class Coordinates{
+-latitude : Double
+-longitude : Double
+}
+
+class Culture{
+-vegetalSpecie : String
+-permanentCulture : Boolean
+-productionFactors : Collection<Product>
+}
+
+class DataIO
+
+class Element{
+-substance : String
+-quantity : Integer
+}
+
+enum Formulation{
+LIQUID
+GRAINY
+DUST
+}
+
+class Hub{
+-name : String
+-local : Coordinates
+}
+
+class Product{
+-comercialName : String
+-formulation : Formulation
+-technicalSheet : TechnicalSheet
+}
+
+class TechnicalSheet{
+-substances : Collection<Element>
+-elements : Collection<Element>
+}
+
+''''''''''
+
+AgriculturalInstallation "1" - "*" AgriculturalPlot
+AgriculturalInstallation "1" -- "*" Building
+
+AgriculturalPlot "1" - "1" Culture
+
+Culture "1" -- "*" Product
+
+Product "1" -- "1" Formulation
+Product "1" -- "1" TechnicalSheet
+
+TechnicalSheet "1" -- "*" Element
+TechnicalSheet "1" -- "*" Element
+
+Coordinates "1" -- "1" Entity
+Coordinates "1" -- "1" Hub
+
+Entity <|-- Client
+Entity <|-- Producer
+Entity <|-- Company
+
+@enduml

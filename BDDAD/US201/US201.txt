@@ -1,0 +1,30 @@
+Convenções de nomenclatura
+
+_________________________________________________________________________________
+Tabelas
+-Os nomes de tabelas devem ser alusivos aos dados que serão armazenados
+-Os nomes das tabelas devem estar no singular.
+-Não usar espaço em branco
+-Para nomes compostos cada palavra deve começar com letra maíscula sendo separadas por "_"
+-Não usar caracteres especiais (por exemplo: @, #, $, %, &, {})
+_________________________________________________________________________________
+Atributos
+-Os nomes das colunas devem deixar clara a sua finalidade na tabela, não sendo necessário conter nenhuma alusão ao tipo de dados da coluna
+-Os nomes dos atributos devem estar no singular.
+-Para nomes compostos cada palavra deve começar com letra maíscula sendo separadas por "_"
+-Não usar caracteres especiais (por exemplo: @, #, $, %, &, {})
+-Não usar espaço em branco
+_________________________________________________________________________________
+Restrições
+-Os nomes das restrições devem deixar clara a sua finalidade
+-Check constrains devem seguir a seguinte nomenclatura [CK_]+[NOME DA TABELA]+[_]+[NOME DA COLUNA]+[NOME CK](se necessário)
+-Foreign Key constrains devem seguir a seguinte nomenclatura [FK_]+[NOME DA TABELA PAI]+[_]+ [NOME DA TABELA FILHO]
+_________________________________________________________________________________
+Chaves Primárias
+-A primary key de todas as tabelas deve ser um atributo de inteiros chamado id.
+-Não usar espaço em branco
+_________________________________________________________________________________
+Chaves Estrangeiras
+-Devem seguir a seguinte estrutura: [nome da tabela]+[_]+[chave primária respetiva] (sem espaçamento, sendo a "chave primária respetiva iniciada por letra maíuscula") 
+-Não usar espaço em branco
+_________________________________________________________________________________
